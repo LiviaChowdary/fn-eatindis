@@ -1,0 +1,16 @@
+getUserType = async() => {
+    this.requestRef = db
+      .collection('users')
+      .where('email_id', '==', )
+      .onSnapshot((snapshot) => {
+        var userType  = [];
+        snapshot.docs.map((doc) => {
+          var type = doc.data();
+          userType['doc_id'] = doc.id;
+          userType.push(type);
+        });
+        this.setState({
+          type: userType,
+        });
+      });
+  };
